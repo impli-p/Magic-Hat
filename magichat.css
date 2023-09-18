@@ -28,17 +28,20 @@ h1 {
     row-gap: 20px;
 }
 
-.number_container {
+.row_container {
     display: flex;
+    width: 100%;
+    justify-content: flex-start;
     align-items: center;
+    column-gap: 10px;
 }
 
-.number_label {
-    width: 100%;
+.label {
+    min-width: 8ch;
+    font-weight: bold;
 }
 
 .number {
-    width: 100%;
     padding: 5px;
     border-radius: 5px;
     border: none;
@@ -85,4 +88,9 @@ h1 {
 
 #button:active {
     background-color: darkred;
+}
+
+#button:disabled {
+    background-color: darkgray;
+    cursor: default;
 }

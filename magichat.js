@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) {
+    var file = document.getElementById("file");
+    
     var outputs_container = document.getElementById("outputs_container");
 
     var button = document.getElementById("button");
@@ -7,13 +9,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var names = [];
 
-    fetch("list.txt")
-        .then((res) => res.text())
-        .then((text) => {
-            names = text.split("\n")
-            number.setAttribute("max", names.length);
-        })
-        .catch((e) => console.error(e));
+    file.addEventListener("change", function(event) {
+        if (file.files) {
+            let list = file.files[0];
+            if (list) {
+                list.text()
+                .then((text) => {
+                    names = text.split("\n");
+                    number.setAttribute("max", names.length);
+                    button.removeAttribute("disabled");
+                })
+                .catch((e) => console.error(e));
+            }
+        }
+    })
+
 
     
     number.addEventListener("change", function(event) {

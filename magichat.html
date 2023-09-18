@@ -9,14 +9,18 @@
 <body>
     <div class="app_container">
         <h1>Magic Hat</h1>
-        <div class="number_container">
-            <label for="number" class="number_label">Number of names:</label>
+        <div class="row_container">
+            <label for="file" class="label">Text list:</label>
+            <input type="file" class="file" name="file" id="file" accept=".txt">
+        </div>
+        <div class="row_container">
+            <label for="number" class="label">Names:</label>
             <input type="number" class="number" name="number" id="number" min="1" value="1">
         </div>
         <div class="outputs_container" id="outputs_container">
             <div class="output"><span id="output_1">&nbsp;</span></div>
         </div>
-        <button id="button">Pick Out Some Names!</button>
+        <button id="button" disabled>Pick Out Some Names!</button>
     </div>
 </body>
 <script src="magichat.js"></script>
